@@ -117,3 +117,4 @@ if __name__ == "__main__":
 
 # Exercicio 5
 # Leia do usuario 1 valor inteiro. Imprima a tabuada deste numero (de 1 a 10).
+termo = 
