@@ -76,25 +76,44 @@ def main():
   menor = media
 
  # maior valor
-  if a > b and a > c:
-      maior = a
-  elif b > a and b > c:
-      maior = b
-   else:
-       maior = c
-
-   # menor valor
-   if a < b and a < c:
-      menor = a
-  elif b < a and b < c:
-       menor = b
-   else:
-       menor = c
+  
 
   print("O maior valor é ", maior, "e o menor é ", menor)
 
 if __name__ == "__main__":
     main()
+
+---chatgpt====
+def main():
+    # Leitura dos 3 valores inteiros
+    valores = []
+    for i in range(3):
+        valores.append(int(input(f"Digite o valor {i+1}: ")))
+
+    # Calculando a média
+    media = sum(valores) / len(valores)
+
+    # Imprimindo a média
+    print(f"A média é: {media:.2f}")
+
+    # Criando listas para os valores menores e maiores que a média
+    menores = []
+    maiores = []
+
+    # Separando os valores menores e maiores que a média
+    for valor in valores:
+        if valor < media:
+            menores.append(valor)
+        elif valor > media:
+            maiores.append(valor)
+
+    # Exibindo os resultados
+    print(f"Valores menores que a média: {menores}")
+    print(f"Valores maiores que a média: {maiores}")
+
+if __name__ == "__main__":
+    main()
+
 
 # Exercicio 5
 # Leia do usuario 1 valor inteiro. Imprima a tabuada deste numero (de 1 a 10).
