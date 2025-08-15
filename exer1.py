@@ -25,10 +25,11 @@ print("A soma dos valores é: ", div)
 if __name__="__main__":
   main()
 
-#Exercicio 3
-#leia 3 valor determine maior menor e igual
+# Exercicio 3
+# Leia do usuário 3 valores inteiros. Encontre o maior e o menor valor entre eles
+# imprimindo o resultado encontrado.
 
-def main():
+  def main():
     a = int(input("Digite n1: "))
     b = int(input("Digite n2: "))
     c = int(input("Digite n3: "))
@@ -60,10 +61,40 @@ if __name__ == "__main__":
     main()
 
   
-#Exercicio 4
-#Leia 3 valores e tire a media deles | verifcar qual é o menor e maior numero digitado
+# Exercicio 4
+# Leia do usuário 3 valores inteiros. Calcule a media entre eles. Então imprima todos
+# os valores menores que a media e todos maiores que a media.
 
 def main():
+  a = int(input("Digite n1: "))
+  b = int(input("Digite n2: "))
+  c = int(input("Digite n3: "))
+  print("Os valores são: ", a, " ", b, " ", c)
 
-if __name__=="__main__"
-  main()
+  media = (a+b+c)/3
+  maior = media
+  menor = media
+
+ # maior valor
+  if a > b and a > c:
+      maior = a
+  elif b > a and b > c:
+      maior = b
+   else:
+       maior = c
+
+   # menor valor
+   if a < b and a < c:
+      menor = a
+  elif b < a and b < c:
+       menor = b
+   else:
+       menor = c
+
+  print("O maior valor é ", maior, "e o menor é ", menor)
+
+if __name__ == "__main__":
+    main()
+
+# Exercicio 5
+# Leia do usuario 1 valor inteiro. Imprima a tabuada deste numero (de 1 a 10).
