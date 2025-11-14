@@ -25,13 +25,12 @@ e imprima separadamente a soma dos que são pares e a soma dos que são
 impares
 {
 program exx1;
-var cont, i;
+var cont, nnn : integer;
 begin
-  writeln('Digite uma sequencia de numeros')
-  read(nnn)
-  while nnn <> 0 do
-
-  
+  writeln('Digite uma sequencia de numeros, o zero para o codigo');
+  read(nnn);
+  while nnn = 0 do
+    writeln('contagem parada');
 end.
 }
 =====================+Atividade+=====================
