@@ -63,15 +63,15 @@ begin
 if (num >= 50) and (num <= 201) then
   begin
     repeat
-      writeln('Multiplo de 3 maiores do que 50.');
+      writeln('Multiplo de 3 maiores do que 50 e menor que 201.');
       read(nnn);
-      if (nnn mod 3 = 0) and (nnn mod 2 <> 0) then
-        writeln('O numero: ', nnn, ' é multiplo de 7 e ímpar.')
+      if (nnn mod 3 = 0) then
+        writeln('O numero: ', nnn, ' é multiplo de 3.')
       else 
-        writeln('O numero: ', nnn, ' é multiplo de outro numero alem do 7.');
+        writeln('O numero: ', nnn, ' não é multiplo de 3.');
     until nnn = 0;
   else 
-    writeln('
+    writeln('digite outro numero');
   end;
 end.
 }
