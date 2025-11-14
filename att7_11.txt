@@ -20,3 +20,21 @@ processados pois servem para marcar o final da entrada de dados
 Atividade - data 14/11/2025
 
 =====================+Atividade+=====================
+1 Faça um progrma que leia uma sequencia de numeros terminada em zero
+e imprima separadamente a soma dos que são pares e a soma dos que são
+impares
+{
+program exx1;
+var cont, i;
+begin
+  writeln('Digite uma sequencia de numeros')
+  read(nnn)
+  while nnn <> 0 do
+
+  
+end.
+}
+=====================+Atividade+=====================
+2 Faça um programa que leia uma sequencia de numeros inteiros do teclado
+terminada em zero e imprima os que são ao mesmo tempo multiplos de 7 mas
+não são multiplos de 2
