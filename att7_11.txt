@@ -58,20 +58,17 @@ que termina em zero, e imprima os que forem ao mesmo tempo multiplos de 3
 maiores do que 50 e menores ou iguais a 201
 {
 program exx3;
-var cont, nnn : integer;
+var nnn : integer;
 begin
-if (num >= 50) and (num <= 201) then
+writeln('digite um numero');
+read(nnn);
+while nnn <> 0 do
   begin
-    repeat
-      writeln('Multiplo de 3 maiores do que 50 e menor que 201.');
-      read(nnn);
-      if (nnn mod 3 = 0) then
+      if (nnn > 50) and (nnn <= 201) and (nnn mod 3 = 0) then
         writeln('O numero: ', nnn, ' é multiplo de 3.')
       else 
         writeln('O numero: ', nnn, ' não é multiplo de 3.');
-    until nnn = 0;
-  else 
-    writeln('digite outro numero');
+        
   end;
 end.
 }
