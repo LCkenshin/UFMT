@@ -39,8 +39,7 @@ que termina em zero, e imprima os que são ao mesmo tempo multiplos de 7
 mas não são multiplos de 2
 {
 program exx2;
-var 
-  cont, nnn : integer;
+var cont, nnn : integer;
 begin
   repeat
     writeln('Multiplo de 7 ou 2. O zero interrompe o código.');
@@ -53,4 +52,22 @@ begin
 end.
 ❇️inteiros e múltiplos de 7, mas não de 2❇️
 }
-=
+=====================+Atividade+=====================
+3 Faça um programa que leia uma sequencia de numeros inteiros do teclado
+que termina em zero, e imprima os que forem ao mesmo tempo multiplos de 3
+maiores do que 50 e menores ou iguais a 201
+{
+program exx3;
+var cont, nnn : integer;
+begin
+  repeat
+    writeln('Multiplo de 3.');
+    read(nnn);
+    if (nnn mod 7 = 0) and (nnn mod 2 <> 0) then
+      writeln('O numero: ', nnn, ' é multiplo de 7 e ímpar.')
+    else 
+      writeln('O numero: ', nnn, ' é multiplo de outro numero alem do 7.');
+  until nnn = 0;
+end.
+}
+=====================+Atividade+=====================
