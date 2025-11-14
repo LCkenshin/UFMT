@@ -2,36 +2,6 @@
 1. Faça um programa que leia uma sequência de números
 terminada em zero e imprima separadamente a soma dos que são
 pares e a soma dos que são ímpares.
-{
-program Somas;
-var numero, somaPares, somaImpares: integer;
-begin
-  somaPares := 0;
-  somaImpares := 0;
-
-  writeln('Digite uma sequencia de numeros inteiros.');
-  readln(numero);
-
-  begin
-    { Verifica se o número é Par ou Ímpar }
-    if (numero mod 2 = 0) then
-      somaPares := somaPares + numero
-    else
-      somaImpares := somaImpares + numero;
-
-    { Lê o próximo número dentro do loop }
-    readln(numero);
-  end;
-
-  { Exibe os resultados finais }
-  writeln('--------------------------------');
-  writeln('A soma dos numeros PARES e: ', somaPares);
-  writeln('A soma dos numeros IMPARES e: ', somaImpares);
-  
-  { Mantém a janela aberta até apertar Enter }
-  readln;
-end.
-}
 =====================+Atividade+=====================
 2. Faça um programa que leia uma sequência de números inteiros do
 teclado terminada em zero e imprima os que são ao mesmo
