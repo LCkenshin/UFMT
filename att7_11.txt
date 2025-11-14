@@ -29,8 +29,11 @@ var cont, nnn : integer;
 begin
   writeln('Digite uma sequencia de numeros, o zero para o codigo');
   read(nnn);
-  while nnn = 0 do
-    writeln('contagem parada');
+
+  while nnn <> 0 do
+    begin
+      writeln('contagem parada');    
+    end;
 end.
 }
 =====================+Atividade+=====================
