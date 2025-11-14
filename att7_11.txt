@@ -35,5 +35,18 @@ end.
 }
 =====================+Atividade+=====================
 2 Faça um programa que leia uma sequencia de numeros inteiros do teclado
-terminada em zero e imprima os que são ao mesmo tempo multiplos de 7 mas
-não são multiplos de 2
+que termina em zero, e imprima os que são ao mesmo tempo multiplos de 7
+mas não são multiplos de 2
+{
+program exx2;
+var cont, nnn : integer;
+begin
+  repeat
+    writeln('Verifique se o numero é multiplo, o zero interrompe o codigo');
+    read(nnn);
+    if (nnn % 7 = 0) and (nnn % 2 <> 0) then
+      writeln('o numero: ',nnn,'é multiplo de 7')
+  until nnn = 0;
+end.
+❇️inteiros e múltiplos de 7, mas não de 2❇️
+}
