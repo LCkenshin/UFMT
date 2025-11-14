@@ -15,3 +15,8 @@ tempo múltiplos de 3 maiores do que 50 e menores ou iguais a 201.
 inteiros do teclado terminada em três zeros e imprima, para cada
 trinca de entrada, o menor deles. Os três zeros não devem ser
 processados pois servem para marcar o final da entrada de dados
+=====================+Atividade+=====================
+
+Atividade - data 14/11/2025
+
+=====================+Atividade+=====================
