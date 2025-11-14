@@ -46,10 +46,10 @@ begin
     read(nnn);
     if (nnn mod 7 = 0) and (nnn mod 2 <> 0) then
         writeln('o numero: ' , nnn, 'é multiplo de 7');
-    else (nnn mod 7 <> 0) and (nnn mod 2 = 0)
-        writeln('O numero: ',nnn,' é multiplo de 2')
-    else (nnn mod 7 <> 0) and (nnn mod 2 <> 0)
-        writeln('O numero: ',nnn,' é multiplo de 2')
+    else if (nnn mod 7 <> 0) and (nnn mod 2 = 0) then
+        writeln('O numero: ',nnn,' é multiplo de 2');
+    else if (nnn mod 7 <> 0) and (nnn mod 2 <> 0) then
+        writeln('O numero: ',nnn,' é multiplo de 2');
   until nnn = 0;
 end.
 ❇️inteiros e múltiplos de 7, mas não de 2❇️
