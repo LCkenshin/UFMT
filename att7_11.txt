@@ -60,14 +60,19 @@ maiores do que 50 e menores ou iguais a 201
 program exx3;
 var cont, nnn : integer;
 begin
-  repeat
-    writeln('Multiplo de 3.');
-    read(nnn);
-    if (nnn mod 7 = 0) and (nnn mod 2 <> 0) then
-      writeln('O numero: ', nnn, ' é multiplo de 7 e ímpar.')
-    else 
-      writeln('O numero: ', nnn, ' é multiplo de outro numero alem do 7.');
-  until nnn = 0;
+if (num >= 50) and (num <= 201) then
+  begin
+    repeat
+      writeln('Multiplo de 3 maiores do que 50.');
+      read(nnn);
+      if (nnn mod 3 = 0) and (nnn mod 2 <> 0) then
+        writeln('O numero: ', nnn, ' é multiplo de 7 e ímpar.')
+      else 
+        writeln('O numero: ', nnn, ' é multiplo de outro numero alem do 7.');
+    until nnn = 0;
+  else 
+    writeln('
+  end;
 end.
 }
 =====================+Atividade+=====================
