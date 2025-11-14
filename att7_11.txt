@@ -27,13 +27,10 @@ impares
 program exx1;
 var cont, nnn : integer;
 begin
-  writeln('Digite uma sequencia de numeros, o zero para o codigo');
-  read(nnn);
-
-  while nnn <> 0 do
-    begin
-      writeln('contagem parada');    
-    end;
+  repeat
+    writeln('Digite uma sequencia de numeros, o zero para o codigo');
+    read(nnn);
+  until nnn = 0;
 end.
 }
 =====================+Atividade+=====================
