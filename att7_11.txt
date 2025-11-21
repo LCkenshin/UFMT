@@ -50,7 +50,7 @@ begin
       writeln('O numero: ', nnn, ' é multiplo de outro numero alem do 7.');
   until nnn = 0;
 end.
-❇️inteiros e múltiplos de 7, mas não de 2❇️
+//inteiros e múltiplos de 7, mas não de 2
 }
 =====================+Atividade+=====================
 3 Faça um programa que leia uma sequencia de numeros inteiros do teclado
@@ -79,6 +79,7 @@ trinca de entrada, o menor deles. Os três zeros não devem ser
 processados pois servem para marcar o final da entrada de dados
 
 =====================+Atividade+=====================
+
 =====================+Provas/Trabalho+=====================
 Lista de PDF que vai ser entregue antes e depois no dia 12/12/2025 vamos
 fazer a resolucao desse exercicio individual e apresenta-lo na data ja 
@@ -86,3 +87,11 @@ anunciada falando o que foi feito e os passos do codigo, em seguida apos
 a apresentação vai ser requisitado uma modificação no codigo frente ao
 docente para comprovar.
 =====================+Provas/Trabalho+=====================
+
+Data 20/11/2025
+
+=====================+Atividade+=====================
+Faça uma função em Pascal que receba como parâmetros dois
+números inteiros não nulos e retorne true se um for o contrário do
+outro e false em caso contrário. Teste sua função usando este
+código:
