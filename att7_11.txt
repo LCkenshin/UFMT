@@ -73,3 +73,9 @@ while nnn <> 0 do
 end.
 }
 =====================+Atividade+=====================
+=====================+Provas/Trabalho+=====================
+Lista de PDF que vai ser entregue antes e depois no dia 12/12/2025 vamos
+fazer a resolucao desse exercicio individual e apresenta-lo na data ja 
+anunciada falando o que foi feito e os passos do codigo, em seguida apos 
+a apresentação vai ser requisitado uma modificação no codigo frente ao
+docente para comprovar.
