@@ -73,9 +73,16 @@ while nnn <> 0 do
 end.
 }
 =====================+Atividade+=====================
+4. Faça um programa que leia uma sequência de trincas de números
+inteiros do teclado terminada em três zeros e imprima, para cada
+trinca de entrada, o menor deles. Os três zeros não devem ser
+processados pois servem para marcar o final da entrada de dados
+
+=====================+Atividade+=====================
 =====================+Provas/Trabalho+=====================
 Lista de PDF que vai ser entregue antes e depois no dia 12/12/2025 vamos
 fazer a resolucao desse exercicio individual e apresenta-lo na data ja 
 anunciada falando o que foi feito e os passos do codigo, em seguida apos 
 a apresentação vai ser requisitado uma modificação no codigo frente ao
 docente para comprovar.
+=====================+Provas/Trabalho+=====================
