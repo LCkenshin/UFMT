@@ -91,7 +91,17 @@ docente para comprovar.
 Data 20/11/2025
 
 =====================+Atividade+=====================
-Faça uma função em Pascal que receba como parâmetros dois
+1) Faça uma função em Pascal que receba como parâmetros dois
 números inteiros não nulos e retorne true se um for o contrário do
 outro e false em caso contrário. Teste sua função usando este
 código:
+=====================+Atividade+=====================
+2) Faça uma função em Pascal que receba como parâmetro um
+número inteiro e teste se ele é um número binário. Se ele for binário,
+imprima sim senão imprima não. Teste sua função usando este
+código:
+=====================+Atividade+=====================
+3)
+=====================+Atividade+=====================
+4)
+=====================+Atividade+=====================
