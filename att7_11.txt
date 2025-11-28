@@ -134,6 +134,47 @@ end.
 número inteiro e teste se ele é um número binário. Se ele for binário,
 imprima sim senão imprima não. Teste sua função usando este
 código:
+{
+program VerificaBinario;
+uses
+    SysUtils; // Necessario para a funcao IntToStr
+
+var
+    numeroDigitado: Integer;
+    ehBinario: Boolean;
+
+(*
+  Funcao que verifica se uma string contem apenas '0' e '1'.
+*)
+function IsBinary(const s: string): Boolean;
+var
+    i: Integer;
+begin
+    ehBinario := True; // Assume que é binário inicialmente
+    for i := 1 to Length(s) do
+    begin
+        // Verifica se o caractere atual NÃO é '0' e NEM '1'
+        if not ((s[i] = '0') or (s[i] = '1')) then
+        begin
+            ehBinario := False; // Se encontrar qualquer outro dígito, não é binário
+            Break;              // Interrompe o loop imediatamente (otimizacao)
+        end;
+    end;
+    IsBinary := ehBinario;
+end;
+
+begin
+    Write('Digite um numero inteiro para verificar se e binario (ex: 10110): ');
+    ReadLn(numeroDigitado);
+
+    // Convertemos o numero inteiro para string para facilitar a inspecao dos digitos
+    if IsBinary(IntToStr(numeroDigitado)) then
+        WriteLn('O numero ', numeroDigitado, ' E binario (contem apenas 0s e 1s).')
+    else
+        WriteLn('O numero ', numeroDigitado, ' NAO e binario (contem outros digitos).');
+end.
+
+}
 =====================+Atividade+=====================
 3)Faça uma função em Pascal que receba como parâmetro um
 número inteiro garantidamente binário e o converta para decimal.
