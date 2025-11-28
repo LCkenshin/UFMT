@@ -95,13 +95,52 @@ Data 20/11/2025
 números inteiros não nulos e retorne true se um for o contrário do
 outro e false em caso contrário. Teste sua função usando este
 código:
+{
+program Inverso;
+var n1, n2, inv, temp, digito : Integer;
+
+function InverterNumero(n: Integer): Integer;
+var
+    rev: Integer;
+    temp_n: Integer;
+begin
+    rev := 0;
+    temp_n := n;
+    while temp_n > 0 do
+    begin
+        digito := temp_n mod 10;
+        rev := (rev * 10) + digito;
+        temp_n := temp_n div 10;
+    end;
+    InverterNumero := rev;
+end;
+
+begin
+    Write('Digite o primeiro numero (ex: 123): ');
+    ReadLn(num1);
+    Write('Digite o segundo numero (ex: 321): ');
+    ReadLn(num2);
+
+    invertido := InverterNumero(num1);
+
+    if invertido = num2 then
+        WriteLn(num1, ' e ', num2, ' sao inversos um do outro.')
+    else
+        WriteLn(num1, ' e ', num2, ' NAO sao inversos um do outro.');
+end.
+}
 =====================+Atividade+=====================
 2) Faça uma função em Pascal que receba como parâmetro um
 número inteiro e teste se ele é um número binário. Se ele for binário,
 imprima sim senão imprima não. Teste sua função usando este
 código:
 =====================+Atividade+=====================
-3)
+3)Faça uma função em Pascal que receba como parâmetro um
+número inteiro garantidamente binário e o converta para decimal.
+Teste sua função usando este código:
 =====================+Atividade+=====================
-4)
+4)Faça um programa em Pascal que receba os valores antigo e atual
+de um produto. Use uma função que determine o percentual de
+acréscimo entre esses valores. O resultado deverá ser mostrado
+pelo programa principal:
 =====================+Atividade+=====================
