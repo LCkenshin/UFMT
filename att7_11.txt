@@ -139,45 +139,39 @@ número inteiro e teste se ele é um número binário. Se ele for binário,
 imprima sim senão imprima não. Teste sua função usando este
 código:
 {
-program VerificaBinario;
-uses
-    SysUtils; // Necessario para a funcao IntToStr
+Program Pzim ;
 
-var
-    numeroDigitado: Integer;
-    ehBinario: Boolean;
-
-(*
-  Funcao que verifica se uma string contem apenas '0' e '1'.
-*)
-function IsBinary(const s: string): Boolean;
-var
-    i: Integer;
+function FBinario(n : integer): boolean;
+var 
+resto: integer;
+bin: boolean;
 begin
-    ehBinario := True; // Assume que é binário inicialmente
-    for i := 1 to Length(s) do
-    begin
-        // Verifica se o caractere atual NÃO é '0' e NEM '1'
-        if not ((s[i] = '0') or (s[i] = '1')) then
-        begin
-            ehBinario := False; // Se encontrar qualquer outro dígito, não é binário
-            Break;              // Interrompe o loop imediatamente (otimizacao)
-        end;
-    end;
-    IsBinary := ehBinario;
+	bin:= true;
+	
+	while (n > 0) do
+	begin
+		resto:= n mod 10;
+		
+		if (resto <> 0) and (resto <> 1) then
+		 bin:= false;
+		
+		n:= n div 10;
+	end;                      	
+	
+	FBinario := bin;
 end;
 
+var
+num: integer;	
 begin
-    Write('Digite um numero inteiro para verificar se e binario (ex: 10110): ');
-    ReadLn(numeroDigitado);
-
-    // Convertemos o numero inteiro para string para facilitar a inspecao dos digitos
-    if IsBinary(IntToStr(numeroDigitado)) then
-        WriteLn('O numero ', numeroDigitado, ' E binario (contem apenas 0s e 1s).')
-    else
-        WriteLn('O numero ', numeroDigitado, ' NAO e binario (contem outros digitos).');
+	writeln('Digite o numero');
+	read(num);
+	
+	if FBinario(num) then
+		writeln('O numero ',num,' e binario')
+	else 
+		writeln('O numero ',num,' nao e binario');
 end.
-
 }
 =====================+Atividade+=====================
 3)Faça uma função em Pascal que receba como parâmetro um
