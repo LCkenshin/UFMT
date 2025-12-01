@@ -96,38 +96,42 @@ números inteiros não nulos e retorne true se um for o contrário do
 outro e false em caso contrário. Teste sua função usando este
 código:
 {
-program Inverso;
-var n1, n2, inv, temp, digito : Integer;
+Program Pzim ;
 
-function InverterNumero(n: Integer): Integer;
-var
-    rev: Integer;
-    temp_n: Integer;
+function Contrario(n1, n2 : integer): boolean;
+var A, B, C: integer;
 begin
-    rev := 0;
-    temp_n := n;
-    while temp_n > 0 do
-    begin
-        digito := temp_n mod 10;
-        rev := (rev * 10) + digito;
-        temp_n := temp_n div 10;
-    end;
-    InverterNumero := rev;
+	A:= n1;
+	B:= 0;
+	
+	while A > 0 do
+	begin
+		C:= A mod 10;
+		B:= (B*10) + C;
+		A:= A div 10;
+	end;
+	
+	if B = n2 then
+		Contrario:= true
+	else
+		Contrario:= false;
 end;
 
-begin
-    Write('Digite o primeiro numero (ex: 123): ');
-    ReadLn(num1);
-    Write('Digite o segundo numero (ex: 321): ');
-    ReadLn(num2);
-
-    invertido := InverterNumero(num1);
-
-    if invertido = num2 then
-        WriteLn(num1, ' e ', num2, ' sao inversos um do outro.')
-    else
-        WriteLn(num1, ' e ', num2, ' NAO sao inversos um do outro.');
-end.
+var 
+n1, n2: integer;
+Begin
+  writeln('digite o numero 1');
+	read(n1);
+	writeln('digite o numero 2');
+	read(n2);
+	
+	if Contrario(n1, n2) then
+		writeln('true, O numero ',n1,' e contario do numero ',n2)
+	else
+		writeln('false, O numero ',n1,' nao e contario do numero ',n2);
+		
+	readln;	
+End.
 }
 =====================+Atividade+=====================
 2) Faça uma função em Pascal que receba como parâmetro um
