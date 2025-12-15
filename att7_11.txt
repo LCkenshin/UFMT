@@ -198,5 +198,144 @@ e procedimentos apropriados
 =====================+Atividade+=====================
 =====================+TRABALHO ENTREGAR+=====================
 
+program SegmentoDeSomaMaximaCompleto;
+const // numero pre definido de elementos
+  MAX_N = 1000;
+
+type // Implementação das Funções e Procedimentos 
+  TSequencia = array[1..MAX_N] of Real;
+
+// Função Auxiliar: Encontra o Máximo entre dois Reais
+function Max_Real(A, B: Real): Real;
+begin
+  if A > B then
+    Max_Real := A
+  else
+    Max_Real := B;
+end;
+
+// Procedimento de Leitura dos Dados
+procedure LeituraSequencia(var N: Integer; var Seq: TSequencia);
+var
+  i: Integer;
+begin
+  Write('Digite o numero de elementos da sequencia (N, max. ');
+  Write(MAX_N);
+  WriteLn('):');
+  ReadLn(N);
+
+  if (N <= 0) or (N > MAX_N) then
+  begin
+    WriteLn('Tamanho N invalido. O programa sera encerrado.');
+    N := 0;
+    Exit;
+  end;
+
+  WriteLn('Digite os ', N, ' numeros reais:');
+
+  for i := 1 to N do
+  begin
+    Write('x', i, ': ');
+    ReadLn(Seq[i]);
+  end;
+end;
+
+// NOVO PROCEDIMENTO: Encontra a Soma Máxima e os Índices
+// Recebe 
+procedure EncontrarSegmentoMaximo(
+  N: Integer; 
+  Seq: TSequencia; 
+  var SomaMaxima: Real; 
+  var InicioSegmento: Integer; 
+  var FimSegmento: Integer
+);
+var
+  SomaAtual: Real;     
+  InicioAtual: Integer; // Armazena o início do segmento atual
+  i: Integer;          
+begin
+  // Inicialização para N > 0
+  if N > 0 then
+  begin
+    SomaMaxima := Seq[1];
+    SomaAtual := Seq[1];
+    
+    InicioSegmento := 1;
+    FimSegmento := 1;
+    InicioAtual := 1;
+
+    // Iteração principal (Algoritmo de Kadane Modificado)
+    for i := 2 to N do
+    begin
+      // 1. Atualiza SomaAtual
+      if Seq[i] > SomaAtual + Seq[i] then
+      begin
+        // Se o número atual é maior, reiniciamos o segmento aqui.
+        SomaAtual := Seq[i];
+        InicioAtual := i; // O novo segmento começa na posição atual
+      end
+      else
+      begin
+        // Estendemos o segmento
+        SomaAtual := SomaAtual + Seq[i];
+      end;
+      
+      // 2. Atualiza SomaMaxima e os Índices Globalmente
+      if SomaAtual > SomaMaxima then
+      begin
+        SomaMaxima := SomaAtual;
+        InicioSegmento := InicioAtual; // Registra o início do segmento que gerou esta SomaMaxima
+        FimSegmento := i;              // Registra o fim
+      end;
+    end;
+  end
+  else
+  begin
+    SomaMaxima := 0.0;
+    InicioSegmento := 0;
+    FimSegmento := 0;
+  end;
+end;
+
+// 3. --- SECAO DE VARIAVEIS (GLOBAL) ---
+
+var
+  TamanhoN: Integer;
+  SequenciaLida: TSequencia; 
+  ResultadoSoma: Real;
+  InicioSegmento, FimSegmento: Integer; // Variáveis para armazenar as posições
+  
+// --- Bloco Principal do Programa ---
+
+begin
+  WriteLn('*** Algoritmo do Segmento de Soma Maxima ***');
+  WriteLn('---------------------------------------------');
+
+  LeituraSequencia(TamanhoN, SequenciaLida);
+	
+// Condiconal para verificar o Segmento
+  if TamanhoN > 0 then
+  begin
+    // Chamada do NOVO PROCEDIMENTO
+    EncontrarSegmentoMaximo(TamanhoN, SequenciaLida, ResultadoSoma, InicioSegmento, FimSegmento);
+
+    // --- IMPRESSÃO DO RESULTADO COMPLETO ---
+    WriteLn('---------------------------------------------');
+    Write('A soma maxima do segmento e: ');
+    WriteLn(ResultadoSoma:0:2);
+    
+    // NOVO: Mensagem com as posições
+    Write('O segmento vai da posicao ');
+    Write(InicioSegmento);
+    Write(' a ');
+    Write(FimSegmento);
+    WriteLn(' (indices do vetor).');
+    WriteLn('---------------------------------------------');
+  end
+  else
+    WriteLn('Programa finalizado.');
+
+  ReadLn; 
+end.
 
 =====================+TRABALHO ENTREGAR+=====================
