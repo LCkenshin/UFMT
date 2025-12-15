@@ -195,3 +195,8 @@ Faça um programa em Pascal que leia um inteiro positivo n e em
 seguida leia n valores inteiros quaisquer e imprima sim se o vetor
 estiver ordenado e nao em caso contrário. Use ao máximo funções
 e procedimentos apropriados
+=====================+Atividade+=====================
+=====================+TRABALHO ENTREGAR+=====================
+
+
+=====================+TRABALHO ENTREGAR+=====================
