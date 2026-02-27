@@ -1,25 +1,12 @@
+=====================================================
 =====================+Atividade+=====================
-1. Faça um programa que leia uma sequência de números
-terminada em zero e imprima separadamente a soma dos que são
-pares e a soma dos que são ímpares.
-=====================+Atividade+=====================
-2. Faça um programa que leia uma sequência de números inteiros do
-teclado terminada em zero e imprima os que são ao mesmo
-tempo múltiplos de 7 mas não são múltiplos de 2.
-=====================+Atividade+=====================
-3. Faça um programa que leia uma sequência de números inteiros do
-teclado terminada em zero e imprima os que forem ao mesmo
-tempo múltiplos de 3 maiores do que 50 e menores ou iguais a 201.
-=====================+Atividade+=====================
-4. Faça um programa que leia uma sequência de trincas de números
-inteiros do teclado terminada em três zeros e imprima, para cada
-trinca de entrada, o menor deles. Os três zeros não devem ser
-processados pois servem para marcar o final da entrada de dados
-=====================+Atividade+=====================
+=====================================================
 
 Atividade - data 14/11/2025
 
+=====================================================
 =====================+Atividade+=====================
+=====================================================
 1 Faça um progrma que leia uma sequencia de numeros terminada em zero
 e imprima separadamente a soma dos que são pares e a soma dos que são
 impares
@@ -33,7 +20,9 @@ begin
   until nnn = 0;
 end.
 }
+=====================================================
 =====================+Atividade+=====================
+=====================================================
 2 Faça um programa que leia uma sequencia de numeros inteiros do teclado
 que termina em zero, e imprima os que são ao mesmo tempo multiplos de 7
 mas não são multiplos de 2
@@ -52,7 +41,9 @@ begin
 end.
 //inteiros e múltiplos de 7, mas não de 2
 }
+=====================================================
 =====================+Atividade+=====================
+=====================================================
 3 Faça um programa que leia uma sequencia de numeros inteiros do teclado
 que termina em zero, e imprima os que forem ao mesmo tempo multiplos de 3
 maiores do que 50 e menores ou iguais a 201
@@ -72,25 +63,35 @@ while nnn <> 0 do
   end;
 end.
 }
+=====================================================
 =====================+Atividade+=====================
+=====================================================
 4. Faça um programa que leia uma sequência de trincas de números
 inteiros do teclado terminada em três zeros e imprima, para cada
 trinca de entrada, o menor deles. Os três zeros não devem ser
 processados pois servem para marcar o final da entrada de dados
 
+=====================================================
 =====================+Atividade+=====================
+=====================================================
 
-=====================+Provas/Trabalho+=====================
+=====================================================
+=================+Provas/Trabalho+===================
+=====================================================
 Lista de PDF que vai ser entregue antes e depois no dia 12/12/2025 vamos
 fazer a resolucao desse exercicio individual e apresenta-lo na data ja 
 anunciada falando o que foi feito e os passos do codigo, em seguida apos 
 a apresentação vai ser requisitado uma modificação no codigo frente ao
 docente para comprovar.
-=====================+Provas/Trabalho+=====================
+=====================================================
+=================+Provas/Trabalho+===================
+=====================================================
 
-Data 20/11/2025
+Data 21/11/2025
 
+=====================================================
 =====================+Atividade+=====================
+=====================================================
 1) Faça uma função em Pascal que receba como parâmetros dois
 números inteiros não nulos e retorne true se um for o contrário do
 outro e false em caso contrário. Teste sua função usando este
@@ -176,25 +177,118 @@ end.
 =====================+Atividade+=====================
 3)Faça uma função em Pascal que receba como parâmetro um
 número inteiro garantidamente binário e o converta para decimal.
-Teste sua função usando este código:
+
+program ConversorBinarioDecimal;
+
+// Função que realiza a conversao
+function BinarioParaDecimal(binario: integer): integer;
+var
+  decimal, peso, digito: integer;
+begin
+  decimal := 0;
+  peso := 1;
+
+  while binario > 0 do
+  begin
+  
+    digito := binario mod 10;
+    decimal := decimal + (digito * peso);
+    binario := binario div 10;
+    peso := peso * 2;
+    
+  end;
+
+  BinarioParaDecimal := decimal;
+end;
+
+var
+  numeroBinario, resultadoDecimal: integer;
+
+begin
+
+  writeln('--- CONVERSOR BINARIO -> DECIMAL ---');
+  write('Informe um numero inteiro binario (apenas 0s e 1s): ');
+  readln(numeroBinario);
+  
+  resultadoDecimal := BinarioParaDecimal(numeroBinario);
+
+  writeln;
+  writeln('O numero binario ', numeroBinario, ' em decimal eh: ', resultadoDecimal);
+  readln;
+  
+end.
 =====================+Atividade+=====================
 4)Faça um programa em Pascal que receba os valores antigo e atual
 de um produto. Use uma função que determine o percentual de
 acréscimo entre esses valores. O resultado deverá ser mostrado
 pelo programa principal:
+
+
 =====================+Atividade+=====================
 
-data
+data 28/11/2025
 
-Faça uma função em Pascal que facilite a inicialização de um vetor
+1)Faça uma função em Pascal que facilite a inicialização de um vetor
 de inteiros de modo que os elementos de índices ímpares recebam
 o valor inicial -2 e os elementos de índices pares recebam o valor
 inicial 7
 
-Faça um programa em Pascal que leia um inteiro positivo n e em
+=====================================================
+2)Faça um programa em Pascal que leia um inteiro positivo n e em
 seguida leia n valores inteiros quaisquer e imprima sim se o vetor
 estiver ordenado e nao em caso contrário. Use ao máximo funções
 e procedimentos apropriados
+
+{program OrdenacaoBasica;
+
+// criacao do vetor
+type
+  vetorreal = array[1..100] of integer;
+
+// verificacao de ordem
+function verificaordem(v: vetorreal; tamanho: integer): boolean;
+var
+  i: integer;
+  ordenado: boolean;
+begin
+  ordenado := true; // Assumimos que está ordenado até provar o contrário
+
+  // Percorre o vetor comparando o anterior com o proximo
+  for i := 1 to tamanho - 1 do
+  begin
+    if v[i] > v[i + 1] then
+    begin
+      ordenado := false; // Se o atual for maior que o próximo, quebrou a ordem
+    end;
+  end;
+
+  verificaordem := ordenado; // Retorna o resultado final
+end;
+
+// --- INICIO DO PROGRAMA PRINCIPAL ---
+var
+  n, i: integer;
+  vetor: vetorreal;
+
+begin
+  write('Digite a quantidade de elementos (n): ');
+  readln(n);
+
+  // Leitura dos numeros
+  for i := 1 to n do
+  begin
+    write('Digite o valor ', i, ': ');
+    readln(vetor[i]);
+  end;
+
+  // Usa a função para decidir o que imprimir
+  if verificaordem(vetor, n) = true then
+    writeln('Os numeros estao em ordem')
+  else
+    writeln('Os numeros nao estao em ordem');
+
+  readln;
+end.}
 =====================+Atividade+=====================
 =====================+TRABALHO ENTREGAR+=====================
 
