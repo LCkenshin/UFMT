@@ -243,6 +243,47 @@ de inteiros de modo que os elementos de índices ímpares recebam
 o valor inicial -2 e os elementos de índices pares recebam o valor
 inicial 7
 
+program InicializaVetor;
+
+type
+  MeuVetor = array[1..100] of integer;
+
+// procedimento recebe o vetor e o tamanho que o usuario escolheu
+procedure PreencherVetor(var v: MeuVetor; tamanho: integer);
+var
+  i: integer;
+begin
+  for i := 1 to tamanho do
+  begin
+    // Se o resto da divisão do índice por 2 for zero, ele é par
+    if i mod 2 = 0 then
+      v[i] := 7
+    else
+      v[i] := -2; // Se não for par, é ímpar
+  end;
+end;
+
+// inicio
+var
+  vetorTeste: MeuVetor;
+  n, i: integer;
+
+begin
+  write('Quantas posicoes deseja preencher? (Maximo 100): ');
+  readln(n);
+
+  PreencherVetor(vetorTeste, n);
+
+  // Mostra o resultado
+  writeln;
+  writeln('--- VETOR PREENCHIDO ---');
+  for i := 1 to n do
+  begin
+    writeln('Indice [', i, '] = ', vetorTeste[i]);
+  end;
+
+  readln;
+end.
 =====================================================
 =====================+Atividade+=====================
 =====================================================
