@@ -526,6 +526,11 @@ begin
         // Desvios condicionais aninhados originais
         if numero > 0 then
           writeln(' > O valor (', numero, ') eh POSITIVO.')
+			//modificacao solicitada      //
+			//if numero mod 2 = 0 then    //
+			//			writeln('par')    //
+			//			else			  //
+			//			writeln('impar')  //
         else
           if numero < 0 then
             writeln(' > O valor (', numero, ') eh NEGATIVO.')
@@ -534,12 +539,12 @@ begin
       end
       else
         // Caso falhe 
-        writeln(' > ENTRADA INVALIDA! Por favor, digite apenas numeros ou "pare".');
+        writeln(' > ENTRADA INVALIDA! digite numeros ou "pare".');
     end;
     
     writeln; // Pula uma linha para organizar a leitura
 
-  // A condição de parada do laço ocorre quando a entrada for igual a 'stop'
+  // Condição de parada do laço 'Pare'
   until entrada = 'pare';
   
 end.
