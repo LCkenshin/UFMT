@@ -10,3 +10,41 @@ int main() {
   return 0;
 }
 ++++++++++++++++++++++++++++++++++
+
+===Atividade - 2 ==========
+===Data ========
+=============
+
+Exercício 1 — Desenvolva um programa que leia o nome completo de um usuário e sua idade, e exiba essas informações de forma organizada na tela, utilizando `cin`, `getline` e `cout`.
+#include <iostream>
+
+int main() {
+    char a; // char e o tipo para caractere
+    std::cout << "digite algo: ";
+    std::cin >> a; // cin serve para capturar algo digitado, somente um por vez eu acho
+    std::cout << "tu escreveu: " << a; // tem que separar: char << variavel
+
+    return 0;
+}
+
+Exercício 2 — Crie um programa que leia nome completo, idade e altura de uma pessoa, armazenando corretamente cada tipo de dado e exibindo todas as informações ao final de forma clara.
+#include <iostream>
+
+int main() {
+    char a; // char e o tipo para caractere
+    std::cout << "digite algo: ";
+    std::getline >> a; // cin serve para capturar algo digitado, somente um por vez eu acho
+    std::cout << "tu escreveu: " << a; // tem que separar: char << variavel
+
+    return 0;
+}
+++++++++++++++++++++++++++++++++++
+
+
+
+
+
+
+
+
+
