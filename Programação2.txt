@@ -131,7 +131,51 @@ cout << nome << " sua media e: " << result << endl;
 return 0;
 }
 ++++++++++++++++++++++++++++++++++
+===Atividade - 3==========
+===Data ========
+=============
 
+//Exercicio 1 - fazer um sistema de validar com cascata, criar um sistema que entre idade, nivel de acesso, usar if else e switch.
+
+// get.che() o programa processa cada caractere sem esperar pelo enter e precisa colocar ent: #include <conio.h> aqui nao usou pq tava dando erro a logica ai so foi pro foi geito normal e serviu 😐
+// <conio.h ele executa funcoes de laco sem esperar pelo enter pelo que parece
+
+#include <iostream>
+#include <conio.h> 
+using namespace std;
+
+int main(){
+    int a, b;
+
+    cout << "Digite sua idade: ";
+    cin >> a; // idade delcarada vai pro IF
+
+    if (a >= 18) { 
+        cout << "\nMaior de idade, seu Lvl e: 1, 2 ou 3" << endl;
+        cin >> b;
+        
+        switch (b) {    
+            case 1:
+                cout << "\nAdulto lvl baixo";
+            break;
+
+            case 2:
+                cout << "\nAdulto lvl medio";
+            break;
+
+            case 3:
+                cout << "\nAdulto lvl Alto";
+            break;
+        
+            default:
+                cout << "\nEntrada Invalida";
+            break;
+    } } else {    
+    cout << "invalido"; 
+}
+    
+return 0;
+}
 
 
 
