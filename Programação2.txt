@@ -2,6 +2,7 @@ De fora {
 comando setwum faz o alinhamento dentro de n definido pelo usuario
 endl apresenta a saida daquela linha assim que executado
 \n e mais leve e melhor para pular linha
+aind nao sei usar Char parece que da pra juntar Char[100] pra definir tamanho mas e paia
 }
 
 ===Atividade - 1 ==========
