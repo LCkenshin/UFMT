@@ -19,10 +19,10 @@ Exercício 1 — Desenvolva um programa que leia o nome completo de um usuário 
 #include <iostream>
 
 int main() {
-    char a; // char e o tipo para caractere
+    char a; // 💭 char e o tipo para caractere
     std::cout << "digite algo: ";
-    std::cin >> a; // cin serve para capturar algo digitado, somente um por vez eu acho
-    std::cout << "tu escreveu: " << a; // tem que separar: char << variavel
+    std::cin >> a; // 💭 cin serve para capturar algo digitado, somente um por vez eu acho
+    std::cout << "tu escreveu: " << a; // 💭 tem que separar: char << variavel
 
     return 0;
 }
@@ -31,10 +31,10 @@ Exercício 2 — Crie um programa que leia nome completo, idade e altura de uma 
 #include <iostream>
 
 int main() {
-    char a; // char e o tipo para caractere
+    char a; // 💭 char e o tipo para caractere
     std::cout << "digite algo: ";
-    std::getline >> a; // cin serve para capturar algo digitado, somente um por vez eu acho
-    std::cout << "tu escreveu: " << a; // tem que separar: char << variavel
+    std::getline >> a; // 💭 cin serve para capturar algo digitado, somente um por vez eu acho
+    std::cout << "tu escreveu: " << a; // 💭 tem que separar: char << variavel
 
     return 0;
 }
