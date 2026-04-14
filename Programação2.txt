@@ -1,8 +1,13 @@
+De fora {
+comando setwum faz o alinhamento dentro de n definido pelo usuario
+endl apresenta a saida daquela linha assim que executado
+\n e mais leve e melhor para pular linha
+}
+
 ===Atividade - 1 ==========
 ===Data ========
 =============
 #include <isostream>
-
 using namespace std;
 
 int main() {
@@ -14,34 +19,117 @@ int main() {
 ===Atividade - 2 ==========
 ===Data ========
 =============
+// Exercício 1 — Desenvolva um programa que leia o nome completo de um usuário e sua idade, e exiba essas informações de forma organizada na tela, utilizando cin, getline e cout.
 
-Exercício 1 — Desenvolva um programa que leia o nome completo de um usuário e sua idade, e exiba essas informações de forma organizada na tela, utilizando `cin`, `getline` e `cout`.
 #include <iostream>
+using namespace std;
 
 int main() {
-    char a; // 💭 char e o tipo para caractere
-    std::cout << "digite algo: ";
-    std::cin >> a; // 💭 cin serve para capturar algo digitado, somente um por vez eu acho
-    std::cout << "tu escreveu: " << a; // 💭 tem que separar: char << variavel
+    string a;
+    // 💭 char e o tipo para caractere, string tambem serve so nao sei se tem diferenca
 
-    return 0;
-}
+    cout << "Escreva: ";
+    cin >> a;
+    // 💭 cin serve para capturar algo digitado, somente um por vez eu acho, esse sinal >> significa extracao
 
-Exercício 2 — Crie um programa que leia nome completo, idade e altura de uma pessoa, armazenando corretamente cada tipo de dado e exibindo todas as informações ao final de forma clara.
-#include <iostream>
-
-int main() {
-    char a; // 💭 char e o tipo para caractere
-    std::cout << "digite algo: ";
-    std::getline >> a; // 💭 cin serve para capturar algo digitado, somente um por vez eu acho
-    std::cout << "tu escreveu: " << a; // 💭 tem que separar: char << variavel
+    cout << "Escreves-te: " << a; 
+    // 💭 tem que separar: char << variavel
 
     return 0;
 }
 ++++++++++++++++++++++++++++++++++
+// Exercício 2 — Crie um programa que leia nome completo, idade e altura de uma pessoa, armazenando corretamente cada tipo de dado e exibindo todas as informações ao final de forma clara.
 
+#include <iostream>
+using namespace std;
 
+int main(){
+    string nome;
+    int idade;
+    float altura;
 
+    cout << "Digite seu nome completo: ";
+    getline(cin, nome);
+    // 💭 getline le uma linha inteira, incluindo espaços, e armazena na variável escolhida
+    // 💭 dentro do getline, o primeiro argumento é o fluxo de entrada (cin) e o segundo é a variável onde a linha lida será armazenada
+
+    cout << "Digite sua idade: ";
+    cin >> idade;
+
+    cout << "Digite sua altura (em metros): ";
+    cin >> altura;
+
+    cout << "\nInformacoes fornecidas:" << endl;
+    cout << nome << endl;
+    cout << idade << endl;
+    cout << altura << endl;
+
+    return 0;
+}
+++++++++++++++++++++++++++++++++++
+//Exercício 3 - Le tres numeros e imprime na ordem que foi digitado
+
+#include <iostream>
+using namespace std;
+
+int main(){
+  int a, b, c;
+
+  cout << "digite tres numeros: \n";
+  cin >> a >> b >> c;
+
+  cout << "\nnumeros digitados: " << endl; 
+  cout << a << " " << b << " " << c;
+  return 0;
+}
+++++++++++++++++++++++++++++++++++
+//Exercício 4 - le nome e salario e exibe de maneira organizada, salario em double para indicar os centavos do salario ex: 1.209,87
+
+#include <iostream>
+#include <iomanip> // 💭 Necessário para usar setprecision e fixed
+using namespace std;
+
+int main() {
+  string nome;
+  float money;
+
+  cout << "escreva nome: ";
+  cin >> nome;
+
+  cout << "escreva money: ";
+  cin >> money;
+
+  cout << fixed << setprecision(2);
+  // 💭 fixed: Configura para mostrar o número em formato decimal, sem notação científica
+  // 💭 setprecision(2): Configura para mostrar 2 casas decimais
+
+  cout << "salario: " << money << " , " << "nome: " << nome;
+}
+++++++++++++++++++++++++++++++++++
+//Exercício 5 - le nome, tres numeros e exibe media, media em float com precisao de 2
+
+#include <iostream>
+#include <iomanip> // 💭 numeros com precisao. fixed, setprecision(x)
+using namespace std;
+
+int main() {
+  string nome;
+  float n1, n2, n3, result;
+
+cout << "Nome: ";
+cin >> nome;
+
+cout << "Digite suas 3 notas: ";
+cin >> n1 >> n2 >> n3; // 💭 cin em cascada
+
+result = (n1 + n2 + n3) / 3; // 💭 operacao de media
+
+cout << fixed << setprecision(2); // 💭 definir o n de casas decimais para 2
+cout << nome << " sua media e: " << result << endl; 
+
+return 0;
+}
+++++++++++++++++++++++++++++++++++
 
 
 
