@@ -176,6 +176,118 @@ int main(){
     
 return 0;
 }
+++++++++++++++++++++++++++++++++++
+//exercicio 2 - Escreva um programa que solicite ao usuário digitar dois valores inteiros e, em seguida, o programa principal chama uma função, denominada soma, passando os parâmetros que o usuário digitou.
+
+#include <iostream>
+using namespace std;
+
+//função da bahia 
+int Somar(int a,int b) {
+    return a + b;
+}
+
+//Programa principal
+int main(){
+    int z, x, resultado;
+
+    cout << "digite dois valores inteiros" << endl;
+    cin >> z >> x;
+
+//atribuir a funcao porque nao exibi direto 
+    resultado = Somar(z,x);
+
+    cout << "resultado: " <<resultado;
+    
+}
+++++++++++++++++++++++++++++++++++
+//Exercicio 3 - Escreva um programa que solicite ao usuário digitar uma quantia (quan) em dólares (mon) que você deseja que seja convertida da para reais (real), Seu programa deve implementar uma função inline. Após a entrada da (quan) em dólares (mon), o programa calcula e retorna a quantia convertida em reais.
+
+//dolar ta 5 conto baxa nunca se loko
+#include <iostream>
+using namespace std;
+
+//funcao inline
+inline int conversor(int a, int b) {
+    return a * b;
+}
+
+int main() {
+    //variaveis
+    int mon,cota,resul;
+
+    //saida um
+    cout << "Digite a quantia em dolar que deseja converter para real" << endl;
+    cin >> mon;
+
+    //saida dois
+    cout << "Digite a cotacao" << endl;
+    cin >> cota;
+
+    //atribuicao e saida tres
+    resul = conversor(mon,cota);
+    cout << "valor convertido" << resul;
+}
+++++++++++++++++++++++++++++++++++
+//Exercicio 4 - Elabore um programa que cria um array bidimensional com valores do tipo double. Chame esse array de despesas[ANO][TRIMESTRE]. Adicionalmente, você deve definir ANO=2 e TRIMESTRE=4. Em seguida, deve criar um laço que solicite ao usuário digitar os valores das despesas para cada um dos semestres respectivos nos dois anos. Ao final, o programa exibirá uma tabela que mostra os valores das despesas de cada ano, sendo listadas por trimestre, além do valor total de despesas nos dois anos
+
+//Sinceramente nem eu sei oque eu fiz pq a parte de exibir o trimestre apareceu um numero aleatorio e dps fufo normalmente, e outras coisas deu loop sem parar hora sim hora nao
+
+#include <iostream>
+using namespace std;
+
+int main(){
+  // declara pra nao ter alteracao
+  // const tipo tag; <- essa logica aqui
+  const int ANO = 2;
+  const int TRIMESTRE = 2;
+
+  // declaracao da matriz ou array
+  double despesas[ANO][TRIMESTRE];
+  double rSomaTotal = 0;
+  // entrar ou inicializar a matriz
+  for (int i = 0; i < ANO; i++) {
+        //percorre as linhas
+        cout << "Ano: " << i + 1;
+        for (int j = 0; j < TRIMESTRE; j++) {
+            //percorre coluna
+            cout << "\nTrimestre: " << j + 1 << endl;
+            //ta salvando de acordo o contador
+            //ta somando tambem
+            cin >> despesas[i][j];
+            rSomaTotal += despesas[i][j];
+        }
+    }
+  
+  // Ao final, o programa exibirá uma tabela que mostra os valores das despesas de cada ano, *sendo listadas por trimestre*, além do valor total de despesas nos dois anos
+  cout << "===== Tabela =====";
+
+  //iniciali a tal tabela
+  for (int i = 0; i < ANO; i++){
+    //variavel besta
+    double totalAno = 0;
+
+    //aqui pra exibir o ano
+    cout << "\nAno: " << i + 1 << "|" ;
+    cout << " Tri | ";
+
+    for (int j = 0; j < TRIMESTRE; j++){
+      cout << despesas[i][j] << " ";
+
+      //Aqui ta percorrento l - 1, c - 1,2 ai soma abaixo
+      totalAno += despesas[i][j];
+    }
+    cout << "| gasto: " << totalAno;
+  }
+
+  //valor total de despesas nos dois anos
+  cout << "\ndespesa total nos dois anos: " << rSomaTotal;
+
+  return 0;
+}
+++++++++++++++++++++++++++++++++++
+
+
 
 
 
