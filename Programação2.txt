@@ -286,10 +286,87 @@ int main(){
   return 0;
 }
 ++++++++++++++++++++++++++++++++++
+//Fazer um bagui que pessa pra digitar dois livros
+//vai ter struct e tambem a bosta da matriz
 
 
+//bibliotecas C++
+#include <iostream>
+#include <string>
+using namespace std;
 
+//declara estrutura
+struct Livros{
+    //declara os negocio
+    string nome;
+    string ano;
 
+    //provavelmete oque ela pode pedir para filtrar ou por nome seja por inicial ou outra besteira
+    //int autor;
+};
+
+//principal
+int main(){
+    //variaveis
+    int escolha;
+
+    //aqui a declaracao da matriz
+    const int TAM = 2;
+    Livros livros[TAM];
+
+    //metodo diferente porque eu pensei em fazer direto e ficava paia
+    //isso usando os casos
+    cout << "Oque voce deseja fazer: ";
+    cout << "\n1 - Salvar Livro" << "\n2 - filtrar livro" << "\nescolha: ";
+    cin >> escolha;
+
+    //uso disso aqui pra fazer a media ponderada
+    switch (escolha)
+    {
+    //Caso 1 - vai pegar e guardar os livros
+    case 1:{
+        //aqui ele pega e incia salvando por parte
+        //primeiro NOME depois ANO
+        cin.ignore();
+
+        // esse trem de cima e pra ignorar o ENTER por que esse trem salva como digito e dai faz string vazia
+
+        for (int i = 0; i < TAM; i++){
+            cout << "\nlivro N: " << i + 1 << endl;
+            
+            //Aqui ta comecando os registro dentro da matriz com estrutura ou estrutura com matriz ja nao sei mais
+            cout << "\nNome L: ";
+            getline(cin, livros[i].nome);
+
+            cout << "Ano L: ";
+            getline(cin, livros[i].ano);
+        }
+        break;
+        
+    }
+    
+    case 2: {
+        int a,b;
+        cout << "\nDigite as data filtro"<< endl;
+        cout << "Ano 1: ";
+        cin >> a;
+        cout << "Ano 2: ";
+        cin >> b;
+
+        if (a < b){
+            cout << "gay";
+        }
+        break;
+    }
+        
+    
+    default:
+        cout << "\nEscolheu errado";
+        break;
+    }
+    
+    cout << livros[i][j];
+}
 
 
 
