@@ -368,5 +368,233 @@ int main(){
     cout << livros[i][j];
 }
 
+=========
+Aula - 7
+=========
 
+ex 1 
 
+#include <iostream>
+#include <string>
+
+class Gato {
+private:
+    std::string nome;
+    int idade;
+    double peso;
+
+public:
+    // Construtor
+    Gato(std::string n, int i, double p) : nome(n), idade(i) {
+        setPeso(p); // Usa o setter para garantir a validação do peso
+    }
+
+    // Setter para o peso com validação
+    void setPeso(double p) {
+        if (p > 0) {
+            peso = p;
+        } else {
+            std::cout << "Erro: O peso deve ser maior que zero! Definindo valor padrão (1.0).\n";
+            peso = 1.0; // Valor padrão em caso de erro
+        }
+    }
+
+    // Métodos para exibição (opcional, para testar)
+    void exibirDados() const {
+        std::cout << "Gato: " << nome << " | Idade: " << idade << " anos | Peso: " << peso << " kg\n";
+    }
+};
+
+===
+ex 2
+
+#include <iostream>
+#include <string>
+
+class ContaBancaria {
+private:
+    std::string numeroConta;
+    double saldo;
+
+public:
+    // Construtor (saldo iniciado em 0)
+    ContaBancaria(std::string numero) : numeroConta(numero), saldo(0.0) {}
+
+    // Apenas método getter para o saldo
+    double getSaldo() const {
+        return saldo;
+    }
+
+    // Método para depositar
+    void depositar(double valor) {
+        if (valor > 0) {
+            saldo += valor;
+            std::cout << "Depósito de R$ " << valor << " realizado com sucesso.\n";
+        } else {
+            std::cout << "Erro: Valor de depósito inválido.\n";
+        }
+    }
+
+    // Método para sacar
+    void sacar(double valor) {
+        if (valor > 0 && valor <= saldo) {
+            saldo -= valor;
+            std::cout << "Saque de R$ " << valor << " realizado com sucesso.\n";
+        } else {
+            std::cout << "Erro: Saldo insuficiente ou valor inválido para saque.\n";
+        }
+    }
+};
+
+==
+ex 3
+
+#include <iostream>
+
+class Termometro {
+private:
+    double temperaturaCelsius;
+
+public:
+    // Construtor (iniciado em 25.0)
+    Termometro() : temperaturaCelsius(25.0) {}
+
+    // Construtor alternativo (caso queira iniciar com outro valor)
+    Termometro(double tempInicial) {
+        setTemperaturaCelsius(tempInicial);
+    }
+
+    // Setter com bloqueio para valores abaixo do zero absoluto (-273.15°C)
+    void setTemperaturaCelsius(double temp) {
+        if (temp >= -273.15) {
+            temperaturaCelsius = temp;
+        } else {
+            std::cout << "Erro: Temperatura abaixo do zero absoluto (-273.15 C) não é permitida.\n";
+        }
+    }
+
+    // Getter para Celsius
+    double getTemperaturaCelsius() const {
+        return temperaturaCelsius;
+    }
+
+    // Getter para Fahrenheit (calcula dinamicamente sem novo atributo)
+    double getTemperaturaFahrenheit() const {
+        return (temperaturaCelsius * 1.8) + 32.0;
+    }
+};
+
+====
+Aula - 8
+====
+
+ex 1
+
+#include <iostream>
+
+class MatrizDinamica {
+private:
+    int** matriz;
+    int linhas;
+    int colunas;
+
+public:
+    // Construtor Parametrizado
+    MatrizDinamica(int l, int c) : linhas(l), colunas(c) {
+        matriz = new int*[linhas];
+        for (int i = 0; i < linhas; ++i) {
+            matriz[i] = new int[colunas](); // () inicializa os elementos com zero
+        }
+    }
+
+    // Construtor de Cópia (Cópia Profunda Obrigatória)
+    MatrizDinamica(const MatrizDinamica& outra) : linhas(outra.linhas), colunas(outra.colunas) {
+        matriz = new int*[linhas];
+        for (int i = 0; i < linhas; ++i) {
+            matriz[i] = new int[colunas];
+            for (int j = 0; j < colunas; ++j) {
+                matriz[i][j] = outra.matriz[i][j]; // Copia o valor real, não o ponteiro
+            }
+        }
+    }
+
+    // Destrutor (Preventivo de vazamentos)
+    ~MatrizDinamica() {
+        for (int i = 0; i < linhas; ++i) {
+            delete[] matriz[i]; // Deleta cada linha
+        }
+        delete[] matriz; // Deleta o array de ponteiros
+    }
+
+    // Método auxiliar para preencher/testar (Opcional)
+    void definirValor(int l, int c, int valor) {
+        if (l >= 0 && l < linhas && c >= 0 && c < colunas) {
+            matriz[l][c] = valor;
+        }
+    }
+};
+
+==
+ex 2
+
+#include <iostream>
+
+class Contador {
+private:
+    int valor;
+
+public:
+    Contador(int v = 0) : valor(v < 0 ? 0 : v) {} // Garante valor positivo
+
+    // 1. Operador de Incremento Pré-fixado (++c)
+    // Assinatura: sem parâmetros, retorna referência (&)
+    Contador& operator++() {
+        ++valor; // Incrementa o estado atual
+        return *this; // Retorna o próprio objeto modificado
+    }
+
+    // 2. Operador de Incremento Pós-fixado (c++)
+    // Assinatura: parâmetro dummy (int), retorna por valor (sem &)
+    Contador operator++(int) {
+        Contador temporario = *this; // Salva o estado atual (cópia)
+        ++valor;                     // Incrementa o objeto real
+        return temporario;           // Retorna o estado antigo (antes do incremento)
+    }
+
+    int getValor() const { return valor; }
+};
+
+==
+ex 3 
+
+#include <iostream>
+#include <string>
+
+class StringSegura {
+private:
+    std::string conteudo;
+
+public:
+    StringSegura(std::string texto) : conteudo(texto) {}
+
+    // 1. BLOQUEIO DE CÓPIA TRADICIONAL (= delete)
+    StringSegura(const StringSegura& outra) = delete;            // Construtor de cópia proibido
+    StringSegura& operator=(const StringSegura& outra) = delete; // Atribuição por cópia proibida
+
+    // 2. PERMISSÃO DE MOVIMENTO EM MEMÓRIA (= default ou personalizado)
+    StringSegura(StringSegura&& outra) = default;            // Construtor de movimento permitido
+    StringSegura& operator=(StringSegura&& outra) = default; // Atribuição por movimento permitida
+
+    // Destrutor padrão
+    ~StringSegura() = default;
+};
+
+// Exemplo de comportamento no código:
+/*
+    StringSegura s1("Dado Seguro");
+    
+    // StringSegura s2 = s1;        // ERRO DE COMPILAÇÃO: Cópia deletada!
+    // s1 = s2;                     // ERRO DE COMPILAÇÃO: Atribuição deletada!
+    
+    StringSegura s3 = std::move(s1); // PERMITIDO: s1 é movido para s3 via Move Semantics.
+*/
