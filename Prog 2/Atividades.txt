@@ -1,0 +1,614 @@
+========== Aula - 1 ==========
+
+#include <isostream>
+using namespace std;
+
+int main() {
+  cout << "Ola mundo" << endl;
+  return 0;
+}
+++++++++++++++++++++++++++++++++++
+
+========== Aula - 2 ==========
+
+// Exercício 1 — Desenvolva um programa que leia o nome completo de um usuário e sua idade, e exiba essas informações de forma organizada na tela, utilizando cin, getline e cout.
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    string a;
+    // 💭 char e o tipo para caractere, string tambem serve so nao sei se tem diferenca
+
+    cout << "Escreva: ";
+    cin >> a;
+    // 💭 cin serve para capturar algo digitado, somente um por vez eu acho, esse sinal >> significa extracao
+
+    cout << "Escreves-te: " << a; 
+    // 💭 tem que separar: char << variavel
+
+    return 0;
+}
+
+++++++++++++++++++++++++++++++++++
+
+// Exercício 2 — Crie um programa que leia nome completo, idade e altura de uma pessoa, armazenando corretamente cada tipo de dado e exibindo todas as informações ao final de forma clara.
+
+#include <iostream>
+using namespace std;
+
+int main(){
+    string nome;
+    int idade;
+    float altura;
+
+    cout << "Digite seu nome completo: ";
+    getline(cin, nome);
+    // 💭 getline le uma linha inteira, incluindo espaços, e armazena na variável escolhida
+    // 💭 dentro do getline, o primeiro argumento é o fluxo de entrada (cin) e o segundo é a variável onde a linha lida será armazenada
+
+    cout << "Digite sua idade: ";
+    cin >> idade;
+
+    cout << "Digite sua altura (em metros): ";
+    cin >> altura;
+
+    cout << "\nInformacoes fornecidas:" << endl;
+    cout << nome << endl;
+    cout << idade << endl;
+    cout << altura << endl;
+
+    return 0;
+}
+
+++++++++++++++++++++++++++++++++++
+
+//Exercício 3 - Le tres numeros e imprime na ordem que foi digitado
+
+#include <iostream>
+using namespace std;
+
+int main(){
+  int a, b, c;
+
+  cout << "digite tres numeros: \n";
+  cin >> a >> b >> c;
+
+  cout << "\nnumeros digitados: " << endl; 
+  cout << a << " " << b << " " << c;
+  return 0;
+}
+++++++++++++++++++++++++++++++++++
+
+//Exercício 4 - le nome e salario e exibe de maneira organizada, salario em double para indicar os centavos do salario ex: 1.209,87
+
+#include <iostream>
+#include <iomanip> // 💭 Necessário para usar setprecision e fixed
+using namespace std;
+
+int main() {
+  string nome;
+  float money;
+
+  cout << "escreva nome: ";
+  cin >> nome;
+
+  cout << "escreva money: ";
+  cin >> money;
+
+  cout << fixed << setprecision(2);
+  // 💭 fixed: Configura para mostrar o número em formato decimal, sem notação científica
+  // 💭 setprecision(2): Configura para mostrar 2 casas decimais
+
+  cout << "salario: " << money << " , " << "nome: " << nome;
+}
+
+++++++++++++++++++++++++++++++++++
+
+//Exercício 5 - le nome, tres numeros e exibe media, media em float com precisao de 2
+
+#include <iostream>
+#include <iomanip> // 💭 numeros com precisao. fixed, setprecision(x)
+using namespace std;
+
+int main() {
+  string nome;
+  float n1, n2, n3, result;
+
+cout << "Nome: ";
+cin >> nome;
+
+cout << "Digite suas 3 notas: ";
+cin >> n1 >> n2 >> n3; // 💭 cin em cascada
+
+result = (n1 + n2 + n3) / 3; // 💭 operacao de media
+
+cout << fixed << setprecision(2); // 💭 definir o n de casas decimais para 2
+cout << nome << " sua media e: " << result << endl; 
+
+return 0;
+}
+
+++++++++++++++++++++++++++++++++++
+
+========== Aula - 3 ==========
+
+//Exercicio 1 - fazer um sistema de validar com cascata, criar um sistema que entre idade, nivel de acesso, usar if else e switch.
+
+// get.che() o programa processa cada caractere sem esperar pelo enter e precisa colocar ent: #include <conio.h> aqui nao usou pq tava dando erro a logica ai so foi pro foi geito normal e serviu 😐
+// <conio.h ele executa funcoes de laco sem esperar pelo enter pelo que parece
+
+#include <iostream>
+#include <conio.h> 
+using namespace std;
+
+int main(){
+    int a, b;
+
+    cout << "Digite sua idade: ";
+    cin >> a; // idade delcarada vai pro IF
+
+    if (a >= 18) { 
+        cout << "\nMaior de idade, seu Lvl e: 1, 2 ou 3" << endl;
+        cin >> b;
+        
+        switch (b) {    
+            case 1:
+                cout << "\nAdulto lvl baixo";
+            break;
+
+            case 2:
+                cout << "\nAdulto lvl medio";
+            break;
+
+            case 3:
+                cout << "\nAdulto lvl Alto";
+            break;
+        
+            default:
+                cout << "\nEntrada Invalida";
+            break;
+    } } else {    
+    cout << "invalido"; 
+}
+    
+return 0;
+}
+
+++++++++++++++++++++++++++++++++++
+
+//exercicio 2 - Escreva um programa que solicite ao usuário digitar dois valores inteiros e, em seguida, o programa principal chama uma função, denominada soma, passando os parâmetros que o usuário digitou.
+
+#include <iostream>
+using namespace std;
+
+//função da bahia 
+int Somar(int a,int b) {
+    return a + b;
+}
+
+//Programa principal
+int main(){
+    int z, x, resultado;
+
+    cout << "digite dois valores inteiros" << endl;
+    cin >> z >> x;
+
+//atribuir a funcao porque nao exibi direto 
+    resultado = Somar(z,x);
+
+    cout << "resultado: " <<resultado;
+    
+}
+
+++++++++++++++++++++++++++++++++++
+
+//Exercicio 3 - Escreva um programa que solicite ao usuário digitar uma quantia (quan) em dólares (mon) que você deseja que seja convertida da para reais (real), Seu programa deve implementar uma função inline. Após a entrada da (quan) em dólares (mon), o programa calcula e retorna a quantia convertida em reais.
+
+//dolar ta 5 conto baxa nunca se loko
+#include <iostream>
+using namespace std;
+
+//funcao inline
+inline int conversor(int a, int b) {
+    return a * b;
+}
+
+int main() {
+    //variaveis
+    int mon,cota,resul;
+
+    //saida um
+    cout << "Digite a quantia em dolar que deseja converter para real" << endl;
+    cin >> mon;
+
+    //saida dois
+    cout << "Digite a cotacao" << endl;
+    cin >> cota;
+
+    //atribuicao e saida tres
+    resul = conversor(mon,cota);
+    cout << "valor convertido" << resul;
+}
+
+++++++++++++++++++++++++++++++++++
+
+//Exercicio 4 - Elabore um programa que cria um array bidimensional com valores do tipo double. Chame esse array de despesas[ANO][TRIMESTRE]. Adicionalmente, você deve definir ANO=2 e TRIMESTRE=4. Em seguida, deve criar um laço que solicite ao usuário digitar os valores das despesas para cada um dos semestres respectivos nos dois anos. Ao final, o programa exibirá uma tabela que mostra os valores das despesas de cada ano, sendo listadas por trimestre, além do valor total de despesas nos dois anos
+
+//Sinceramente nem eu sei oque eu fiz pq a parte de exibir o trimestre apareceu um numero aleatorio e dps fufo normalmente, e outras coisas deu loop sem parar hora sim hora nao
+
+#include <iostream>
+using namespace std;
+
+int main(){
+  // declara pra nao ter alteracao
+  // const tipo tag; <- essa logica aqui
+  const int ANO = 2;
+  const int TRIMESTRE = 2;
+
+  // declaracao da matriz ou array
+  double despesas[ANO][TRIMESTRE];
+  double rSomaTotal = 0;
+  // entrar ou inicializar a matriz
+  for (int i = 0; i < ANO; i++) {
+        //percorre as linhas
+        cout << "Ano: " << i + 1;
+        for (int j = 0; j < TRIMESTRE; j++) {
+            //percorre coluna
+            cout << "\nTrimestre: " << j + 1 << endl;
+            //ta salvando de acordo o contador
+            //ta somando tambem
+            cin >> despesas[i][j];
+            rSomaTotal += despesas[i][j];
+        }
+    }
+  
+  // Ao final, o programa exibirá uma tabela que mostra os valores das despesas de cada ano, *sendo listadas por trimestre*, além do valor total de despesas nos dois anos
+  cout << "===== Tabela =====";
+
+  //iniciali a tal tabela
+  for (int i = 0; i < ANO; i++){
+    //variavel besta
+    double totalAno = 0;
+
+    //aqui pra exibir o ano
+    cout << "\nAno: " << i + 1 << "|" ;
+    cout << " Tri | ";
+
+    for (int j = 0; j < TRIMESTRE; j++){
+      cout << despesas[i][j] << " ";
+
+      //Aqui ta percorrento l - 1, c - 1,2 ai soma abaixo
+      totalAno += despesas[i][j];
+    }
+    cout << "| gasto: " << totalAno;
+  }
+
+  //valor total de despesas nos dois anos
+  cout << "\ndespesa total nos dois anos: " << rSomaTotal;
+
+  return 0;
+}
+++++++++++++++++++++++++++++++++++
+
+========== Trabalho - 1 ==========
+
+
+//Fazer um bagui que pessa pra digitar dois livros
+//vai ter struct e tambem a bosta da matriz
+
+
+//bibliotecas C++
+#include <iostream>
+#include <string>
+using namespace std;
+
+//declara estrutura
+struct Livros{
+    //declara os negocio
+    string nome;
+    string ano;
+
+    //provavelmete oque ela pode pedir para filtrar ou por nome seja por inicial ou outra besteira
+    //int autor;
+};
+
+//principal
+int main(){
+    //variaveis
+    int escolha;
+
+    //aqui a declaracao da matriz
+    const int TAM = 2;
+    Livros livros[TAM];
+
+    //metodo diferente porque eu pensei em fazer direto e ficava paia
+    //isso usando os casos
+    cout << "Oque voce deseja fazer: ";
+    cout << "\n1 - Salvar Livro" << "\n2 - filtrar livro" << "\nescolha: ";
+    cin >> escolha;
+
+    //uso disso aqui pra fazer a media ponderada
+    switch (escolha)
+    {
+    //Caso 1 - vai pegar e guardar os livros
+    case 1:{
+        //aqui ele pega e incia salvando por parte
+        //primeiro NOME depois ANO
+        cin.ignore();
+
+        // esse trem de cima e pra ignorar o ENTER por que esse trem salva como digito e dai faz string vazia
+
+        for (int i = 0; i < TAM; i++){
+            cout << "\nlivro N: " << i + 1 << endl;
+            
+            //Aqui ta comecando os registro dentro da matriz com estrutura ou estrutura com matriz ja nao sei mais
+            cout << "\nNome L: ";
+            getline(cin, livros[i].nome);
+
+            cout << "Ano L: ";
+            getline(cin, livros[i].ano);
+        }
+        break;
+        
+    }
+    
+    case 2: {
+        int a,b;
+        cout << "\nDigite as data filtro"<< endl;
+        cout << "Ano 1: ";
+        cin >> a;
+        cout << "Ano 2: ";
+        cin >> b;
+
+        if (a < b){
+            cout << "gay";
+        }
+        break;
+    }
+        
+    
+    default:
+        cout << "\nEscolheu errado";
+        break;
+    }
+    
+    cout << livros[i][j];
+}
+
+++++++++++++++++++++++++++++++++++
+
+========== Aula - 7 ==========
+
+Exercicio - 1 
+
+#include <iostream>
+#include <string>
+
+class Gato {
+private:
+    std::string nome;
+    int idade;
+    double peso;
+
+public:
+    // Construtor
+    Gato(std::string n, int i, double p) : nome(n), idade(i) {
+        setPeso(p); // Usa o setter para garantir a validação do peso
+    }
+
+    // Setter para o peso com validação
+    void setPeso(double p) {
+        if (p > 0) {
+            peso = p;
+        } else {
+            std::cout << "Erro: O peso deve ser maior que zero! Definindo valor padrão (1.0).\n";
+            peso = 1.0; // Valor padrão em caso de erro
+        }
+    }
+
+    // Métodos para exibição (opcional, para testar)
+    void exibirDados() const {
+        std::cout << "Gato: " << nome << " | Idade: " << idade << " anos | Peso: " << peso << " kg\n";
+    }
+};
+
+++++++++++++++++++++++++++++++++++
+
+Exercicio - 2
+
+#include <iostream>
+#include <string>
+
+class ContaBancaria {
+private:
+    std::string numeroConta;
+    double saldo;
+
+public:
+    // Construtor (saldo iniciado em 0)
+    ContaBancaria(std::string numero) : numeroConta(numero), saldo(0.0) {}
+
+    // Apenas método getter para o saldo
+    double getSaldo() const {
+        return saldo;
+    }
+
+    // Método para depositar
+    void depositar(double valor) {
+        if (valor > 0) {
+            saldo += valor;
+            std::cout << "Depósito de R$ " << valor << " realizado com sucesso.\n";
+        } else {
+            std::cout << "Erro: Valor de depósito inválido.\n";
+        }
+    }
+
+    // Método para sacar
+    void sacar(double valor) {
+        if (valor > 0 && valor <= saldo) {
+            saldo -= valor;
+            std::cout << "Saque de R$ " << valor << " realizado com sucesso.\n";
+        } else {
+            std::cout << "Erro: Saldo insuficiente ou valor inválido para saque.\n";
+        }
+    }
+};
+
+++++++++++++++++++++++++++++++++++
+
+Exercicio - 3
+
+#include <iostream>
+
+class Termometro {
+private:
+    double temperaturaCelsius;
+
+public:
+    // Construtor (iniciado em 25.0)
+    Termometro() : temperaturaCelsius(25.0) {}
+
+    // Construtor alternativo (caso queira iniciar com outro valor)
+    Termometro(double tempInicial) {
+        setTemperaturaCelsius(tempInicial);
+    }
+
+    // Setter com bloqueio para valores abaixo do zero absoluto (-273.15°C)
+    void setTemperaturaCelsius(double temp) {
+        if (temp >= -273.15) {
+            temperaturaCelsius = temp;
+        } else {
+            std::cout << "Erro: Temperatura abaixo do zero absoluto (-273.15 C) não é permitida.\n";
+        }
+    }
+
+    // Getter para Celsius
+    double getTemperaturaCelsius() const {
+        return temperaturaCelsius;
+    }
+
+    // Getter para Fahrenheit (calcula dinamicamente sem novo atributo)
+    double getTemperaturaFahrenheit() const {
+        return (temperaturaCelsius * 1.8) + 32.0;
+    }
+};
+
+========== Aula - 8 ==========
+
+Exercicio - 1
+
+#include <iostream>
+
+class MatrizDinamica {
+private:
+    int** matriz;
+    int linhas;
+    int colunas;
+
+public:
+    // Construtor Parametrizado
+    MatrizDinamica(int l, int c) : linhas(l), colunas(c) {
+        matriz = new int*[linhas];
+        for (int i = 0; i < linhas; ++i) {
+            matriz[i] = new int[colunas](); // () inicializa os elementos com zero
+        }
+    }
+
+    // Construtor de Cópia (Cópia Profunda Obrigatória)
+    MatrizDinamica(const MatrizDinamica& outra) : linhas(outra.linhas), colunas(outra.colunas) {
+        matriz = new int*[linhas];
+        for (int i = 0; i < linhas; ++i) {
+            matriz[i] = new int[colunas];
+            for (int j = 0; j < colunas; ++j) {
+                matriz[i][j] = outra.matriz[i][j]; // Copia o valor real, não o ponteiro
+            }
+        }
+    }
+
+    // Destrutor (Preventivo de vazamentos)
+    ~MatrizDinamica() {
+        for (int i = 0; i < linhas; ++i) {
+            delete[] matriz[i]; // Deleta cada linha
+        }
+        delete[] matriz; // Deleta o array de ponteiros
+    }
+
+    // Método auxiliar para preencher/testar (Opcional)
+    void definirValor(int l, int c, int valor) {
+        if (l >= 0 && l < linhas && c >= 0 && c < colunas) {
+            matriz[l][c] = valor;
+        }
+    }
+};
+
+++++++++++++++++++++++++++++++++++
+
+Exercicio - 2
+
+#include <iostream>
+
+class Contador {
+private:
+    int valor;
+
+public:
+    Contador(int v = 0) : valor(v < 0 ? 0 : v) {} // Garante valor positivo
+
+    // 1. Operador de Incremento Pré-fixado (++c)
+    // Assinatura: sem parâmetros, retorna referência (&)
+    Contador& operator++() {
+        ++valor; // Incrementa o estado atual
+        return *this; // Retorna o próprio objeto modificado
+    }
+
+    // 2. Operador de Incremento Pós-fixado (c++)
+    // Assinatura: parâmetro dummy (int), retorna por valor (sem &)
+    Contador operator++(int) {
+        Contador temporario = *this; // Salva o estado atual (cópia)
+        ++valor;                     // Incrementa o objeto real
+        return temporario;           // Retorna o estado antigo (antes do incremento)
+    }
+
+    int getValor() const { return valor; }
+};
+
+++++++++++++++++++++++++++++++++++
+
+Exercicio - 3 
+
+#include <iostream>
+#include <string>
+
+class StringSegura {
+private:
+    std::string conteudo;
+
+public:
+    StringSegura(std::string texto) : conteudo(texto) {}
+
+    // 1. BLOQUEIO DE CÓPIA TRADICIONAL (= delete)
+    StringSegura(const StringSegura& outra) = delete;            // Construtor de cópia proibido
+    StringSegura& operator=(const StringSegura& outra) = delete; // Atribuição por cópia proibida
+
+    // 2. PERMISSÃO DE MOVIMENTO EM MEMÓRIA (= default ou personalizado)
+    StringSegura(StringSegura&& outra) = default;            // Construtor de movimento permitido
+    StringSegura& operator=(StringSegura&& outra) = default; // Atribuição por movimento permitida
+
+    // Destrutor padrão
+    ~StringSegura() = default;
+};
+
+// Exemplo de comportamento no código:
+/*
+    StringSegura s1("Dado Seguro");
+    
+    // StringSegura s2 = s1;        // ERRO DE COMPILAÇÃO: Cópia deletada!
+    // s1 = s2;                     // ERRO DE COMPILAÇÃO: Atribuição deletada!
+    
+    StringSegura s3 = std::move(s1); // PERMITIDO: s1 é movido para s3 via Move Semantics.
+*/
+
+++++++++++++++++++++++++++++++++++
+
+Tem alguns exercicio de aulas faltando que era aqueles que mostrava em sala esses dai eu nao tinha salvado as fotos 
